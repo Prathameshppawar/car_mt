@@ -28,9 +28,6 @@ This is a **Car Management App** created as an assignment within tight time cons
 - **Responsive Design** 📱  
   Optimized for both desktop and mobile devices to ensure a seamless experience.
 
-- **Search Functionality** 🔍  
-  Quickly find cars by searching by title or description.
-
 - **Error Handling** ⚠️  
   Proper error messages and validations for a smooth user experience.
 
