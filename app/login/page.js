@@ -29,6 +29,7 @@ const LoginSchema = z.object({
 
 export default function LoginForm() {
   const [loading, setLoading] = useState(false);
+  const [stayClicked, setStayClicked] = useState(false);  // Track if the stay logged in checkbox is checked
   const router = useRouter();
   const form = useForm({
     resolver: zodResolver(LoginSchema),
@@ -67,7 +68,8 @@ async function onSubmit(data) {
           <button
             className="text-blue-500 hover:underline"
             onClick={() => {
-              router.push('/login');
+              setStayClicked(true); // Mark the button click
+              // router.push('/login');
             }}
           >
             Stay
@@ -76,7 +78,9 @@ async function onSubmit(data) {
         className: 'toast-blurred-bg',
       });
       setTimeout(() => {
-        router.push('/signup');
+        if (!stayClicked) {
+          router.push('/signup'); // Only redirects to signup if "Stay" isn't clicked
+        }
       }, 10000);
     } else if (error.response && error.response.status === 401) {
       toast({
