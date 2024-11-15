@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import { toast } from '@/hooks/use-toast';
-import { Loader2 } from 'lucide-react';
+// import { Loader2 } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
@@ -146,7 +146,7 @@ export default function CarDetails({ params }) {
                         <CardContent className="flex aspect-square items-center justify-center p-6">
                           <img
                             className="object-cover rounded-md w-full h-full"
-                            src={`https://res.cloudinary.com/dtlcgbazf/image/upload/${image}`}
+                            src={`https://res.cloudinary.com/{process.env.CLOUDINARY_CLOUD_NAME}/image/upload/${image}`}
                             alt={`Car image ${index + 1}`}
                           />
                         </CardContent>

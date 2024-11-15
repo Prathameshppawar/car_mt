@@ -23,7 +23,7 @@ export async function GET(req, { params }) {
 
   try {
     console.log('headers are ',req.headers)
-    const user = await verifyToken(req);  // Verifying token
+    // const user = await verifyToken(req);  // Verifying token
     
     const car = await Car.findById(params.id);
     if (!car) {
@@ -42,7 +42,7 @@ export async function PUT(req, { params }) {
   console.log('logging id = ', id);
 
   try {
-    const user = await verifyToken(req);  // Verifying token
+    // const user = await verifyToken(req);  // Verifying token
 
     const updates = await req.json();
     const updatedCar = await Car.findByIdAndUpdate(params.id, updates, { new: true });
@@ -61,7 +61,7 @@ export async function DELETE(req, { params }) {
   await dbConnect();
 
   try {
-    const user = await verifyToken(req);  // Verifying token
+    // const user = await verifyToken(req);  // Verifying token
 
     const result = await Car.findByIdAndDelete(params.id);
     if (!result) {

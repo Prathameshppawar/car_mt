@@ -47,7 +47,7 @@ export async function GET(req) {
   try {
     // Verify the token and get the userId
     // console.log(req.headers.get('Authorization'));
-    const token = req.headers.get('Authorization')?.split(' ')[1]; // "Bearer token"
+
     // console.log(token);
     const decoded = verifyToken(req);
     const { userId } = decoded;

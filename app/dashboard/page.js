@@ -10,7 +10,7 @@ export default function Dashboard() {
   const [cars, setCars] = useState([]);
   const router = useRouter();
   const { toast } = useToast();
-  const cloudinaryBaseUrl = 'https://res.cloudinary.com/dtlcgbazf/image/upload/';
+  const cloudinaryBaseUrl = 'https://res.cloudinary.com/{process.env.CLOUDINARY_CLOUD_NAME}/image/upload/';
 
   // Fetch the user's cars
   useEffect(() => {
